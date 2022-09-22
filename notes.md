@@ -42,8 +42,7 @@ You initialized an app but no routes are defined.
 
 
 ---
-
-GET request
+## GET request
 sending the response.
 `res.send('Whats uppp!!!!!');`
 
@@ -68,6 +67,7 @@ res.json({
 });
 ```
 
+## Other Response options
 Downloading a file
 `res.download('server.js')`
 
@@ -100,4 +100,119 @@ Multiple Routes:
 - In the same app file
 - seperate router file - refer routes/users.js
 
-Adding gitignore
+
+
+
+
+
+
+
+#### Day 02
+
+# Dynamic Parameters in GET
+```
+app.get('users/:id', (req, res) => {
+    const USER_ID = req.params.id;
+    res.send("Get request with ID:" + USER_ID);
+});
+
+app.put('users/:id', (req, res) => {
+    const USER_ID = req.params.id;
+    res.send("Get request with ID:" + USER_ID);
+});
+
+app.delete('users/:id', (req, res) => {
+    const USER_ID = req.params.id;
+    res.send("Get request with ID:" + USER_ID);
+});
+
+app.post('users/:id', (req, res) => {
+    const USER_ID = req.params.id;
+    res.send("Get request with ID:" + USER_ID);
+});
+```
+------------------------------------------------------------
+
+### Student app
+
+# Setup - react app
+Download the react app from this repo and get started.
+https://github.com/bpeddapudi/Studentapp-react
+
+# Setup - Node app
+https://github.com/bpeddapudi/nodejs-basics-routes
+
+# POST request - Add new student
+Once you fill and submit the form data has to be sent to Node JS server via POST
+
+CORS error
+https://expressjs.com/en/resources/middleware/cors.html
+
+Response: send the same student data back. Access the data from req Obj
+Goal: Teach students how data is sent from Front end to Back end. Later we will save data in mongo db atlas
+
+# GET request - Add new Student
+Send a get request to Node JS app and return some dummy json data for now from Node server
+
+# PUT
+Explalin where we would use PUT request which is to edit student's information in the table.
+Sent put request to Node and return same data as response from Node for now
+
+# DELETE
+Explalin where we would use DELETE request which is to delete student's information in the table.
+Sent DELETE request to Node and return success message in response
+
+
+
+
+
+
+
+#### Pending Itesm which are not covered
+# Chaining put, post and delete
+```
+app.get('users/:id', (req, res) => {
+    const USER_ID = req.params.id;
+    res.send("Get request with ID:" + USER_ID);
+});
+app.put('users/:id', (req, res) => {
+    const USER_ID = req.params.id;
+    res.send("PUT request with ID:" + USER_ID);
+});
+app.delete('users/:id', (req, res) => {
+    const USER_ID = req.params.id;
+    res.send("DELETE request with ID:" + USER_ID);
+});
+
+```
+
+----
+```
+app.get('users/:id', (req, res) => {
+    const USER_ID = req.params.id;
+    res.send("Get request with ID:" + USER_ID);
+});
+app.put('users/:id', (req, res) => {
+    const USER_ID = req.params.id;
+    res.send("PUT request with ID:" + USER_ID);
+});
+app.delete('users/:id', (req, res) => {
+    const USER_ID = req.params.id;
+    res.send("DELETE request with ID:" + USER_ID);
+});
+
+```
+
+```
+app.get('users/:id', (req, res) => {
+    const USER_ID = req.params.id;
+    res.send("Get request with ID:" + USER_ID);
+}).put('users/:id', (req, res) => {
+    const USER_ID = req.params.id;
+    res.send("PUT request with ID:" + USER_ID);
+}).delete('users/:id', (req, res) => {
+    const USER_ID = req.params.id;
+    res.send("DELETE request with ID:" + USER_ID);
+});
+```
+## Adding gitignore
